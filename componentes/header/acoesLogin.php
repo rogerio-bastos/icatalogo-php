@@ -51,7 +51,7 @@ switch($_POST["acao"]){
             $_SESSION["usuarioId"] = $usuario["id"];
             $_SESSION["usuarioNome"] = $usuario["nome"];
 
-            $_SESSION["mensagem"] = "Bem Vindo, " . $usuario["nome"];
+            $_SESSION["mensagem"] = "Bem Vindo(a), " . $usuario["nome"];
         }
         //redirecionar para tela de listagem de produtos
         header("location: ../../produtos/index.php");

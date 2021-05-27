@@ -1,7 +1,5 @@
 <?php
 //Sessão é um vínculo entre o navegador do usuário e o servidor back-end
-
-
 session_start();
 
 require("../database/conexao.php");
@@ -40,6 +38,13 @@ function validarCampos()
         $erros[] = "O campo desconto é obrigatório";
     } elseif (!is_numeric(str_replace(",", ".", $_POST["desconto"]))) {
         $erros[] = "O campo desconto deve ser um número";
+    }
+
+    //Verificar se o campo foto está vindo e se ele é uma imagem
+    if($_FILES["foto"]["error"] == UPLOAD_ERR_NO_FILE){
+        $erros[] = "Você precisa enviar uma imagem";
+    }else{
+        //se o arquivo é uma imagem
     }
 
     return $erros;
