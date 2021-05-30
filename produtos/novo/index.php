@@ -81,7 +81,7 @@
           </div>
           <div class="input-group">
             <label for="categoria">Categoria</label>
-            <select name="categoria" id="categoria" required>
+            <select name="categoria" id="categoria">
               <option value="">SELECIONE</option>
               <?php
               while($categoria = mysqli_fetch_array($resultado)){

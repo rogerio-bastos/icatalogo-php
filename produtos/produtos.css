@@ -84,3 +84,15 @@
   font-size: 16px;
   color: var(--textSecundary);
 }
+
+.card-produto section button{
+  width: 40px;
+  height: 30px;
+  margin-left: 290px;
+  padding: 5px;
+
+  cursor: pointer;
+}
+
+
+

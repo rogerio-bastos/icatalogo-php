@@ -9,8 +9,32 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.header > form {
+  width: 50%;
+  display: flex;
+}
+
+.header form > input {
+  flex: 1;
+}
+
+.header form > input:focus {
+  outline: none;
+}
+
+.header form > button {
+  margin-left: -8px;
+  background-color: white;
+
+  outline: none;
+}
+
+.header form > button img {
+  width: 20px;
+}
   
-.header input {
+.header > input {
   width: 50%;
 }
   
@@ -23,7 +47,7 @@
   border-radius: 50%;
 }
   
-.header > figure > img {
+.header > figure img {
   margin: 5px 0px 0px 5px;
   width: 50px;
 }

@@ -3,25 +3,32 @@ session_start();
 ?>
 
 <link rel="stylesheet" href="/web-backend/icatalogo-parte1/componentes/header/header.css">
-<div class="mensagens">
-    <?php
-    if (isset($_SESSION["erros"])) {
-        echo $_SESSION["erros"][0];
-    }
 
-    if (isset($_SESSION["mensagem"])) {
-        echo $_SESSION["mensagem"];
-    }
-
-    unset($_SESSION["erros"]);
+<?php    
+if (isset($_SESSION["mensagem"])) {
+?>
+    <div id="mensagens" class="mensagens">
+        <?=$_SESSION["mensagem"];?>
+    </div>
+    <script lang="pt-br">
+        setTimeout(() => document.getElementById("mensagens").style.display="none", 4000);
+    </script>
+<?php
     unset($_SESSION["mensagem"]);
-    ?>
-</div>
+}
+?>
 <header class="header">
     <figure>
-        <img src="/web-backend/icatalogo-parte1/imgs/logo.png" alt="logo">
+        <a href="/web-backend/icatalogo-parte1/produtos">
+            <img src="/web-backend/icatalogo-parte1/imgs/logo.png" alt="logo">
+        </a>
     </figure>
-    <input type="search" placeholder="Pesquisar" />
+    <form method="GET" action="/web-backend/icatalogo-parte1/produtos/index.php">    
+        <input type="text" name="search" placeholder="Pesquisar" />
+        <button>
+                <img src="/web-backend/icatalogo-parte1/imgs/lupa.svg" />
+        </button>
+    </form>
     <?php
     if (!isset($_SESSION["usuarioId"])) {
     ?>
